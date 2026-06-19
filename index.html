@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Business Starter Collection™ | Dixii Delivery</title>
+  <meta name="description" content="Your guided course delivery hub for The Business Starter Collection™ by Dixii." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #fff8f2;
+      --cream: #fff1e8;
+      --blush: #f7d8d4;
+      --blush-2: #efd3cd;
+      --rose: #c78983;
+      --rose-muted: #9f6b68;
+      --warm-gray: #6f5d58;
+      --ink: #302321;
+      --soft-ink: #59433f;
+      --cherry: #9d001b;
+      --cherry-2: #d60b37;
+      --cherry-3: #ff5e7b;
+      --wine: #40000d;
+      --burgundy: #1f0208;
+      --white-glass: rgba(255, 255, 255, 0.72);
+      --paper: rgba(255, 248, 242, 0.82);
+      --line: rgba(93, 54, 48, 0.12);
+      --shadow: 0 26px 80px rgba(80, 18, 25, 0.14);
+      --shadow-soft: 0 14px 45px rgba(80, 18, 25, 0.10);
+      --radius-xl: 36px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(255, 235, 232, 0.95) 0 24%, transparent 44%),
+        radial-gradient(circle at 95% 0%, rgba(255, 194, 205, 0.50) 0 18%, transparent 42%),
+        linear-gradient(135deg, #fff9f2 0%, #f8ded8 52%, #fff5ed 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(105, 64, 54, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(105, 64, 54, 0.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.65), transparent 70%);
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .page { position: relative; z-index: 1; }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 246, 239, 0.72);
+      border-bottom: 1px solid rgba(88, 43, 41, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      min-width: 0;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+      line-height: 1.02;
+      min-width: 0;
+    }
+
+    .brand-copy .brand-small {
+      display: block;
+      font-size: clamp(9px, 1.6vw, 11px);
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(89, 67, 63, 0.74);
+      white-space: nowrap;
+    }
+
+    .brand-copy .brand-large {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(17px, 2.2vw, 23px);
+      font-weight: 800;
+      letter-spacing: -0.055em;
+      color: var(--wine);
+      white-space: normal;
+    }
+
+    .seal {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse at 28% 12%, rgba(255,255,255,0.96) 0 8%, rgba(255,217,224,0.34) 9% 18%, transparent 32%),
+        radial-gradient(ellipse at 76% 22%, rgba(255,187,201,0.72) 0 11%, transparent 24%),
+        linear-gradient(180deg, #ff7f99 0%, #ed1f4c 24%, #a60022 61%, #3c000b 100%);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.76),
+        inset 0 12px 20px rgba(255,198,210,0.22),
+        inset 0 -16px 24px rgba(30,0,7,0.55),
+        0 14px 34px rgba(153,0,27,0.24);
+      color: #fff;
+      text-shadow: 0 1px 0 rgba(63,0,11,0.54), 0 0 14px rgba(255,237,240,0.34);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+    }
+
+    .seal::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: 5px;
+      height: 40%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.22) 58%, transparent 100%);
+      opacity: 0.82;
+      pointer-events: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: rgba(48, 35, 33, 0.76);
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.68);
+      color: var(--wine);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      transition: transform 220ms cubic-bezier(.2,.9,.24,1.2), box-shadow 220ms ease, filter 220ms ease, background-position 520ms ease;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transform: translateZ(0);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-cherry {
+      color: #fff;
+      border: 1px solid rgba(255, 232, 235, 0.42);
+      background:
+        radial-gradient(ellipse at 24% 9%, rgba(255,255,255,0.95) 0 7%, rgba(255,220,226,0.28) 8% 16%, transparent 28%),
+        radial-gradient(ellipse at 78% 19%, rgba(255,197,207,0.72) 0 8%, transparent 21%),
+        radial-gradient(ellipse at 50% 112%, rgba(32,0,8,0.86) 0 19%, transparent 43%),
+        linear-gradient(180deg, #ff7f99 0%, #ed1f4c 24%, #a60022 61%, #3c000b 100%);
+      background-size: 150% 150%, 120% 120%, 100% 100%, 100% 100%;
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.72),
+        inset 0 12px 22px rgba(255,190,202,0.20),
+        inset 0 -16px 26px rgba(35,0,8,0.54),
+        0 18px 38px rgba(143,0,28,0.25),
+        0 3px 0 rgba(75,0,13,0.18);
+      text-shadow: 0 1px 0 rgba(63,0,11,0.48), 0 0 18px rgba(255,237,240,0.28);
+    }
+
+    .btn-cherry::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      right: 9px;
+      top: 5px;
+      height: 43%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.18) 54%, transparent 100%);
+      transform: translateY(-1px) scaleX(0.94);
+      opacity: 0.72;
+      pointer-events: none;
+      transition: transform 320ms cubic-bezier(.2,.9,.24,1.3), opacity 220ms ease;
+    }
+
+    .btn-cherry::after {
+      content: "";
+      position: absolute;
+      top: -32%;
+      bottom: -38%;
+      left: -68%;
+      width: 58%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.46), rgba(255,223,230,0.22), transparent);
+      transform: translateX(0) rotate(14deg);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 620ms cubic-bezier(.16,1,.3,1), opacity 240ms ease;
+    }
+
+    .btn-cherry:hover {
+      animation: cherryJelly 680ms cubic-bezier(.19,1,.22,1) both;
+      filter: saturate(1.12) contrast(1.04);
+      background-position: 66% 28%, 38% 10%, 50% 100%, 50% 50%;
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,0.82),
+        inset 0 14px 26px rgba(255,203,213,0.24),
+        inset 0 -20px 30px rgba(27,0,7,0.58),
+        0 24px 58px rgba(143,0,28,0.34),
+        0 8px 22px rgba(255,88,119,0.16);
+    }
+
+    .btn-cherry:hover::before {
+      transform: translateY(2px) scaleX(1.04);
+      opacity: 0.92;
+    }
+
+    .btn-cherry:hover::after {
+      transform: translateX(330%) rotate(14deg);
+      opacity: 0.84;
+    }
+
+    @keyframes cherryJelly {
+      0% { transform: translateY(0) scale(1, 1); }
+      34% { transform: translateY(-4px) scale(1.035, .965); }
+      58% { transform: translateY(-3px) scale(.985, 1.035); }
+      78% { transform: translateY(-3px) scale(1.018, .992); }
+      100% { transform: translateY(-3px) scale(1.01, 1.01); }
+    }
+
+    .btn-soft {
+      color: var(--wine);
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(99, 43, 42, 0.12);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero {
+      padding: 82px 0 42px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(96, 42, 40, 0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.58);
+      box-shadow: 0 12px 40px rgba(70, 19, 21, 0.08);
+      color: var(--rose-muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ff8ba0, #a70021);
+      box-shadow: 0 0 0 6px rgba(157,0,27,0.08);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: -0.055em;
+      line-height: 0.94;
+      color: var(--ink);
+    }
+
+    .hero h1 {
+      margin-top: 22px;
+      max-width: 900px;
+      font-size: clamp(48px, 7.8vw, 104px);
+    }
+
+    .serif-soft {
+      color: rgba(48,35,33,0.84);
+      text-shadow: 0 2px 0 rgba(255,255,255,0.75);
+    }
+
+    .wet-word {
+      position: relative;
+      display: inline-block;
+      font-family: "Inter", system-ui, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.085em;
+      line-height: 0.82;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image:
+        radial-gradient(ellipse at 24% 9%, rgba(255,255,255,0.98) 0 4%, transparent 12%),
+        radial-gradient(ellipse at 74% 16%, rgba(255,255,255,0.55) 0 5%, transparent 13%),
+        linear-gradient(90deg, #68000f 0%, #c1002c 19%, #ff5474 41%, #a70021 64%, #fb7892 82%, #7a0018 100%);
+      text-shadow:
+        0 2px 0 rgba(255,255,255,0.32),
+        0 8px 12px rgba(85,0,15,0.20),
+        0 18px 38px rgba(122,0,24,0.28);
+      filter: drop-shadow(0 2px 1px rgba(255,255,255,0.30)) drop-shadow(0 12px 22px rgba(121,0,24,0.18));
+    }
+
+    .wet-word::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: linear-gradient(180deg, rgba(255,255,255,0.95) 0 8%, rgba(255,255,255,0.12) 22%, transparent 42%);
+      transform: translateY(-2px);
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      max-width: 665px;
+      margin: 22px 0 0;
+      color: var(--soft-ink);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.68;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: rgba(89,67,63,0.74);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .glass-card {
+      border: 1px solid rgba(105, 49, 47, 0.13);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,245,239,0.56)),
+        radial-gradient(circle at top right, rgba(255,91,121,0.14), transparent 38%);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: calc(var(--radius-xl) - 1px);
+      border: 1px solid rgba(255,255,255,0.6);
+      pointer-events: none;
+    }
+
+    .method-card {
+      padding: 28px;
+    }
+
+    .method-card h2 {
+      font-size: clamp(30px, 4vw, 52px);
+    }
+
+    .method-list {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 0;
+    }
+
+    .method-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid rgba(92, 44, 39, 0.10);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.56);
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(180deg, var(--cherry-3), var(--cherry), var(--wine));
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.45), 0 10px 22px rgba(154,0,27,0.16);
+      font-weight: 900;
+    }
+
+    .method-step strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .method-step span {
+      color: var(--warm-gray);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .method-step .num {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(60, 10, 15, 0.22);
+    }
+
+    section { padding: 62px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--rose-muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(38px, 6vw, 74px);
+    }
+
+    .section-title p {
+      max-width: 660px;
+      margin: 18px 0 0;
+      color: var(--soft-ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .path-card {
+      padding: 24px;
+      min-height: 244px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(102, 50, 45, 0.12);
+      background:
+        linear-gradient(155deg, rgba(255,255,255,0.68), rgba(255,242,235,0.46)),
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.7), transparent 34%);
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, box-shadow 180ms ease, border 180ms ease;
+      cursor: pointer;
+    }
+
+    .path-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(157,0,27,0.22);
+      box-shadow: 0 24px 64px rgba(88, 18, 22, 0.14);
+    }
+
+    .path-card .tag {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.66);
+      color: var(--rose-muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+    }
+
+    .path-card h3 {
+      font-size: 31px;
+      letter-spacing: -0.055em;
+    }
+
+    .path-card p {
+      margin: 10px 0 0;
+      color: var(--warm-gray);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--cherry);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .decision-panel {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .decision-panel h2 { font-size: clamp(34px, 5vw, 66px); }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .quiz-card {
+      border: 1px solid rgba(104, 47, 42, 0.10);
+      background: rgba(255,255,255,0.66);
+      border-radius: 20px;
+      padding: 16px;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .quiz-card:hover,
+    .quiz-card.active {
+      transform: translateY(-2px);
+      border-color: rgba(157,0,27,0.32);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 14px 34px rgba(103, 16, 22, 0.10);
+    }
+
+    .quiz-card strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .quiz-card span {
+      color: var(--warm-gray);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .recommendation {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(65,0,12,0.92), rgba(157,0,27,0.88));
+      color: #fff9f2;
+      box-shadow: 0 22px 44px rgba(87,0,17,0.24);
+      display: none;
+    }
+
+    .recommendation.show { display: block; }
+
+    .recommendation strong { display: block; margin-bottom: 8px; }
+    .recommendation a { text-decoration: underline; font-weight: 800; }
+
+    .library-shell {
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(104, 47, 42, 0.12);
+      background: rgba(255,255,255,0.46);
+      box-shadow: var(--shadow);
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 999px;
+      border: 1px solid rgba(104, 47, 42, 0.12);
+      outline: none;
+      background: rgba(255,255,255,0.76);
+      color: var(--ink);
+      padding: 0 20px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(104, 47, 42, 0.12);
+      background: rgba(255,255,255,0.68);
+      color: var(--warm-gray);
+      border-radius: 999px;
+      padding: 10px 13px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(180deg, #ff6d88, #b00024 62%, #5c0011);
+      box-shadow: 0 10px 22px rgba(157,0,27,0.18);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .course-card {
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(104, 47, 42, 0.10);
+      background:
+        linear-gradient(150deg, rgba(255,255,255,0.82), rgba(255,246,242,0.54)),
+        radial-gradient(circle at 80% 0%, rgba(255,98,124,0.10), transparent 28%);
+      min-height: 224px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 34px rgba(76, 21, 22, 0.07);
+      transition: 180ms ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 52px rgba(76, 21, 22, 0.12);
+    }
+
+    .course-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .category-pill {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--rose-muted);
+      background: rgba(247, 216, 212, 0.46);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .course-card h3 {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 19px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+
+    .course-card p {
+      color: var(--warm-gray);
+      margin: 10px 0 16px;
+      line-height: 1.58;
+      font-size: 14px;
+    }
+
+    .course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .micro {
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.68);
+      color: rgba(89,67,63,0.78);
+      border: 1px solid rgba(104,47,42,0.08);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .course-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .open-course {
+      min-height: 44px;
+      padding: 11px 14px;
+      font-size: 13px;
+    }
+
+    .copy-one {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(104,47,42,0.12);
+      background: rgba(255,255,255,0.76);
+      cursor: pointer;
+      color: var(--wine);
+      font-weight: 900;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .bonus-card {
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(104, 47, 42, 0.12);
+      background: rgba(255,255,255,0.62);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bonus-card.dark {
+      color: #fff8f2;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,112,136,0.45), transparent 33%),
+        linear-gradient(145deg, #250008, #6f0015 45%, #b30025 100%);
+      box-shadow: 0 30px 86px rgba(79,0,13,0.22);
+    }
+
+    .bonus-card h2,
+    .bonus-card h3 { font-size: clamp(34px, 4.7vw, 62px); }
+    .bonus-card.dark h2,
+    .bonus-card.dark h3 { color: #fff8f2; }
+
+    .bonus-card p,
+    .bonus-card li {
+      color: rgba(89,67,63,0.86);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .bonus-card.dark p,
+    .bonus-card.dark li { color: rgba(255,248,242,0.86); }
+
+    .clean-list {
+      padding: 0;
+      margin: 22px 0 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .clean-list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.70);
+      color: var(--cherry);
+      font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    .bonus-card.dark .check {
+      background: rgba(255,255,255,0.16);
+      color: #fff8f2;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .cta-band {
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,0.70), transparent 28%),
+        linear-gradient(110deg, rgba(255,255,255,0.74), rgba(255,238,232,0.56));
+      border: 1px solid rgba(104, 47, 42, 0.12);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cta-band h3 {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin: 0 0 8px;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    .footer {
+      padding: 50px 0 70px;
+      color: rgba(89,67,63,0.78);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(104,47,42,0.12);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      padding: 14px 16px;
+      background: rgba(49, 0, 10, 0.94);
+      color: #fff8f2;
+      border-radius: 16px;
+      box-shadow: 0 16px 38px rgba(49,0,10,0.24);
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: 220ms ease;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+
+
+    .tiktok-return {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(99, 43, 42, 0.10);
+      background: rgba(255,255,255,0.50);
+      box-shadow: 0 14px 38px rgba(80,18,25,0.08);
+      color: rgba(89,67,63,0.78);
+      font-size: 13px;
+      line-height: 1.45;
+      max-width: 100%;
+    }
+
+    .tiktok-return span {
+      display: inline-block;
+      max-width: 390px;
+    }
+
+    .tiktok-return .btn {
+      min-height: 40px;
+      padding: 10px 15px;
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+
+    .resource-panel {
+      margin-top: 22px;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(102, 50, 45, 0.12);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.72), rgba(255,242,235,0.48)),
+        radial-gradient(circle at top right, rgba(255,91,121,0.10), transparent 42%);
+      box-shadow: 0 14px 40px rgba(80,18,25,0.08);
+    }
+
+    .resource-panel h4 {
+      margin: 0 0 7px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 26px;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .resource-panel p {
+      margin: 0 0 14px;
+      color: var(--warm-gray);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .resource-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .resource-chip {
+      min-height: 44px;
+      padding: 12px 14px;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    .waitlist-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(31, 2, 8, 0.42);
+      backdrop-filter: blur(16px);
+    }
+
+    .waitlist-modal.show {
+      display: flex;
+    }
+
+    .waitlist-card {
+      width: min(520px, 100%);
+      position: relative;
+      padding: 30px;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 232, 235, 0.36);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(255, 210, 219, 0.36), transparent 42%),
+        linear-gradient(145deg, rgba(255,248,242,0.96), rgba(255,239,232,0.92));
+      box-shadow: 0 34px 90px rgba(31, 2, 8, 0.34);
+      text-align: center;
+    }
+
+    .waitlist-card h3 {
+      font-size: clamp(34px, 7vw, 56px);
+      line-height: .92;
+      margin: 8px 0 14px;
+    }
+
+    .waitlist-card p {
+      margin: 0 auto 22px;
+      max-width: 380px;
+      color: var(--soft-ink);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(99, 43, 42, 0.14);
+      background: rgba(255,255,255,0.62);
+      color: var(--wine);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .decision-panel,
+      .bonus-grid,
+      .cta-band { grid-template-columns: 1fr; }
+      .path-grid,
+      .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-inner { align-items: flex-start; padding: 16px 0; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .toolbar { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, var(--container)); }
+      .hero { padding-top: 50px; }
+      .hero h1 { font-size: clamp(44px, 16vw, 74px); }
+      .path-grid,
+      .course-grid,
+      .quiz-grid { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .method-card,
+      .decision-panel,
+      .bonus-card { padding: 22px; }
+      .nav-links a:not(.btn) { display: none; }
+      .btn { width: 100%; }
+      .hero-actions { align-items: stretch; }
+      .course-actions { grid-template-columns: 1fr 44px; }
+      .tiktok-return { width: 100%; align-items: stretch; flex-direction: column; border-radius: 24px; }
+      .tiktok-return span { max-width: 100%; }
+      .resource-links { grid-template-columns: 1fr; }
+      .brand-mark { align-items: center; }
+      .brand-copy .brand-small { white-space: normal; line-height: 1.1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="brand-mark" aria-label="The Business Starter Collection home">
+          <span class="seal">B</span>
+          <span class="brand-copy">
+            <span class="brand-small">Build your beautiful life with</span>
+            <span class="brand-large">The Business Starter Collection™</span>
+          </span>
+        </a>
+        <div class="nav-links" aria-label="Page navigation">
+          <a href="#paths">Choose a Path</a>
+          <a href="#library">Course Library</a>
+          <a href="#resell">Resell Bonus</a>
+          <a href="#library" class="btn btn-cherry">Open Bundle</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Your purchased access is ready</div>
+          <h1>
+            <span class="serif-soft">Your beautiful</span><br />
+            <span class="wet-word" data-text="START.">START.</span>
+          </h1>
+          <p class="hero-copy">
+            This is your calm delivery hub. No more scrolling through random links or wondering which business to open first. Choose the path that matches your life capacity, open one course, and take the next clean step.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-cherry" href="#paths">Find My Starting Point</a>
+            <a class="btn btn-soft" href="#library">Browse Every Course</a>
+          </div>
+          <p class="hero-note">
+            Best use: choose one lane for the next 7 days. Do not try to build every business at once. Clarity compounds when the first step is small enough to complete.
+          </p>
+          <div class="tiktok-return" aria-label="Back to TikTok">
+            <span>Coming from TikTok? Head back and tap the notification bell so you never miss a post or live walkthrough.</span>
+            <a class="btn btn-cherry" href="https://www.tiktok.com/@dear.dixii" target="_blank" rel="noopener noreferrer">Back to TikTok</a>
+          </div>
+        </div>
+
+        <aside class="glass-card method-card" aria-label="The Beautiful Start Method">
+          <span class="eyebrow">The Beautiful Start Method</span>
+          <h2>One decision. One lane. One first move.</h2>
+          <div class="method-list">
+            <div class="method-step">
+              <span class="num">1</span>
+              <div><strong>Choose by capacity</strong><span>Pick based on your current time, energy, responsibility load, and risk tolerance.</span></div>
+            </div>
+            <div class="method-step">
+              <span class="num">2</span>
+              <div><strong>Open one course</strong><span>Start with a single resource. Your goal is completion, not collection.</span></div>
+            </div>
+            <div class="method-step">
+              <span class="num">3</span>
+              <div><strong>Build your next step</strong><span>Use the course to create a simple first action: research, checklist, budget, offer, or outreach.</span></div>
+            </div>
+            <div class="method-step">
+              <span class="num">4</span>
+              <div><strong>Optional resell path</strong><span>Create your own bundle design and use the course links to build an extra income stream.</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="paths">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-title">
+              <span class="eyebrow">Choose by life state</span>
+              <h2>Start where your life has room.</h2>
+              <p>Choose the path that gives you the most relief first. Your best starting point is the one you can open, understand, and complete without adding more pressure.</p>
+            </div>
+          </div>
+
+          <div class="path-grid">
+            <article class="path-card" data-filter="From Home">
+              <div>
+                <span class="tag">Lowest friction</span>
+                <h3>From Home & Flexible</h3>
+                <p>For the woman who needs an income path that can begin with a laptop, a phone, or small windows of time.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+            <article class="path-card" data-filter="Beauty & Lifestyle">
+              <div>
+                <span class="tag">Identity led</span>
+                <h3>Beauty & Lifestyle</h3>
+                <p>For a soft-life business that feels personal, aesthetic, service-based, and easy to visualize.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+            <article class="path-card" data-filter="Local Service">
+              <div>
+                <span class="tag">Stable demand</span>
+                <h3>Local Essential Service</h3>
+                <p>For practical businesses built around everyday needs, local operations, and repeatable service demand.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+            <article class="path-card" data-filter="Care & Wellness">
+              <div>
+                <span class="tag">Care economy</span>
+                <h3>Care & Wellness</h3>
+                <p>For women drawn to healthcare, family support, elder care, wellness, or structured care-based businesses.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+            <article class="path-card" data-filter="Food & Hospitality">
+              <div>
+                <span class="tag">Experience based</span>
+                <h3>Food & Events</h3>
+                <p>For the builder who wants a visible, sensory, community-facing business people can gather around.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+            <article class="path-card" data-filter="Assets & Wealth">
+              <div>
+                <span class="tag">Long game</span>
+                <h3>Assets & Wealth</h3>
+                <p>For the woman thinking beyond quick income into property, credit, rentals, resale, and financial systems.</p>
+              </div>
+              <span class="mini-link">Show this path</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="decision">
+        <div class="container">
+          <div class="glass-card decision-panel">
+            <div>
+              <span class="eyebrow">Need a softer recommendation?</span>
+              <h2>Answer one question.</h2>
+              <p class="hero-note">Choose the statement that feels most true today. The page will suggest a clean starting lane.</p>
+            </div>
+            <div>
+              <div class="quiz-grid" id="quizGrid">
+                <button class="quiz-card" data-reco="From Home"><strong>I need something I can start quietly.</strong><span>Low setup, flexible time, simple first move.</span></button>
+                <button class="quiz-card" data-reco="Beauty & Lifestyle"><strong>I want something that feels like me.</strong><span>Personal brand, beauty, lifestyle, or aesthetic service.</span></button>
+                <button class="quiz-card" data-reco="Local Service"><strong>I want practical local demand.</strong><span>Useful services people already need and pay for.</span></button>
+                <button class="quiz-card" data-reco="Care & Wellness"><strong>I want a care-based opportunity.</strong><span>Family support, elder care, wellness, health-adjacent paths.</span></button>
+              </div>
+              <div class="recommendation" id="recommendation"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="library">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-title">
+              <span class="eyebrow">Your Business Starter Collection™ library</span>
+              <h2>Every link, organized for action.</h2>
+              <p>Search by business name, filter by path, or copy a single course link. Each card gives you a simple reason to start there.</p>
+            </div>
+          </div>
+
+          <div class="library-shell">
+            <div class="toolbar">
+              <label class="search-box" aria-label="Search courses">
+                <input id="searchInput" type="search" placeholder="Search courses, like daycare, boutique, credit, food truck..." />
+              </label>
+              <button class="btn btn-soft" id="copyAllBtn" type="button">Copy All Links</button>
+            </div>
+            <div class="filter-row" id="filterRow"></div>
+            <div class="course-grid" id="courseGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resell">
+        <div class="container">
+          <div class="bonus-grid">
+            <article class="bonus-card dark">
+              <span class="eyebrow" style="color: rgba(255,248,242,0.78);">Special bonus</span>
+              <h2>Customize your bundle in Canva.</h2>
+              <p>You also received the opportunity to use these course links to create your own resellable bundle. Start with the Canva customization link, remove my name, add your colors, and make the delivery feel like your own brand.</p>
+              <ul class="clean-list">
+                <li><span class="check">✓</span><span>Use the course links as your resource stack.</span></li>
+                <li><span class="check">✓</span><span>Customize the bundle name, colors, layout, and buyer experience in Canva.</span></li>
+                <li><span class="check">✓</span><span>Do not resell the original bundle design as-is. Your version needs its own visual identity.</span></li>
+              </ul>
+              <div class="bonus-options">
+                <div class="bonus-option">
+                  <strong>DIY option: Customize in Canva</strong>
+                  <p>Use the editable Canva template to remove my name, add your colors, adjust the layout, and prepare your own branded version.</p>
+                  <a class="btn btn-cherry" id="canvaBtn" href="https://canva.link/cy5bypjnjs25rih" target="_blank" rel="noopener noreferrer">Customize in Canva</a>
+                </div>
+                <div class="bonus-option">
+                  <strong>Upsell option: Get your own dynamic delivery page</strong>
+                  <p>Want this same premium delivery experience for your own bundle? Dixii can build a polished dynamic landing page that organizes your links, frames your offer, and makes your buyers feel guided from the first click.</p>
+                  <a class="btn btn-cherry" id="landingPageBtn" href="#waitlistModal" data-waitlist-trigger>Build My Delivery Page</a>
+                </div>
+              </div>
+              <p style="font-size: 13px; margin-top: 18px;">Canva sign-in is required. Create a Canva account before opening the customization link.</p>
+            </article>
+
+            <article class="bonus-card">
+              <span class="eyebrow">Want the full roadmap?</span>
+              <h3>The collection gives you the start. The academy gives you the system.</h3>
+              <p>The Business Starter Collection™ gives you the links and first directions. The Beautiful Life Builder Academy™ gives you the roadmap, weekly guidance with Dixii, group training, and implementation systems that help turn information into income.</p>
+              <ul class="clean-list">
+                <li><span class="check">✓</span><span>Get clarity on which business direction to commit to first.</span></li>
+                <li><span class="check">✓</span><span>Build with mentorship instead of guessing alone.</span></li>
+                <li><span class="check">✓</span><span>Move from saved links into a real action plan.</span></li>
+              </ul>
+              <div class="cta-band">
+                <div>
+                  <h3>Take the smartest next step.</h3>
+                  <p>Join The Beautiful Life Builder Academy™ when you are ready for structure, support, and implementation.</p>
+                </div>
+                <a class="btn btn-cherry" id="academyBtn" href="#waitlistModal" data-waitlist-trigger>Join The Academy</a>
+              </div>
+              <div class="resource-panel" aria-label="Dixii resource links">
+                <h4>Dixii’s quick links</h4>
+                <p>Stay connected, browse my favorite finds, and come back to my content whenever you need your next beautiful-life nudge.</p>
+                <div class="resource-links">
+                  <a class="btn btn-cherry resource-chip" href="https://a.co/d/02QxKgbN" target="_blank" rel="noopener noreferrer">Amazon</a>
+                  <a class="btn btn-cherry resource-chip" href="https://walmrt.us/4xIuwmg" target="_blank" rel="noopener noreferrer">Walmart</a>
+                  <a class="btn btn-cherry resource-chip" href="https://expedia.com/shop/deardixii" target="_blank" rel="noopener noreferrer">Expedia</a>
+                  <a class="btn btn-cherry resource-chip" href="https://account.beacons.ai/signup?c=dear.dixii&amp;utm_medium=lib_referral_program&amp;utm_campaign=dear.dixii" target="_blank" rel="noopener noreferrer">Beacons</a>
+                  <a class="btn btn-cherry resource-chip" href="https://comfrt.com/DIXII1" target="_blank" rel="noopener noreferrer">Comfrt</a>
+                  <a class="btn btn-cherry resource-chip" href="https://godsloveovercomes.com/DIXII1" target="_blank" rel="noopener noreferrer">Glo</a>
+                  <a class="btn btn-cherry resource-chip" href="https://www.instagram.com/deardixii/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                  <a class="btn btn-cherry resource-chip" href="https://www.facebook.com/profile.php?id=61579839450847" target="_blank" rel="noopener noreferrer">Facebook</a>
+                  <a class="btn btn-cherry resource-chip" href="https://www.youtube.com/channel/UCydxPSyR5viXxBDH8Lr7C-w" target="_blank" rel="noopener noreferrer">YouTube</a>
+                  <a class="btn btn-cherry resource-chip" href="https://www.tiktok.com/@dear.dixii" target="_blank" rel="noopener noreferrer">TikTok</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Build your beautiful life with Dixii</strong><br />
+          Guided income clarity for women moving from overwhelm into structured financial independence.
+        </div>
+        <div>
+          Educational resources only. Results depend on the user, market, execution, startup requirements, and local regulations.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
+
+  <div class="waitlist-modal" id="waitlistModal" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle" aria-hidden="true">
+    <div class="waitlist-card">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close waitlist popup">×</button>
+      <span class="eyebrow">Private access</span>
+      <h3 id="waitlistTitle">Current list at full capacity.</h3>
+      <p>Reach out to be added to the waitlist or to request special access.</p>
+      <a class="btn btn-cherry" href="https://www.tiktok.com/@dear.dixii" target="_blank" rel="noopener noreferrer">DM for Access</a>
+    </div>
+  </div>
+
+  <script>
+    const TIKTOK_LINK = "https://www.tiktok.com/@dear.dixii";
+    const CANVA_CUSTOMIZER_LINK = "https://canva.link/cy5bypjnjs25rih";
+
+    const courses = [
+      { title: "Mobile Food Truck Course", category: "Food & Hospitality", path: "Food & Hospitality", vibe: "For a mobile food brand with visible local demand.", tags: ["food", "mobile", "local"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-mobile-food-truck-business" },
+      { title: "Brunch Restaurant Startup Course", category: "Food & Hospitality", path: "Food & Hospitality", vibe: "For building a brunch concept with an experience-driven offer.", tags: ["restaurant", "hospitality"], url: "https://learningwithjay.teachable.com/p/how-to-start-a-brunch-restaurant-for-beginners" },
+      { title: "Sports Bar Lounge Startup Course", category: "Food & Hospitality", path: "Food & Hospitality", vibe: "For a community-facing lounge or sports bar concept.", tags: ["lounge", "restaurant"], url: "http://learningwithjay.teachable.com/p/sports-bar-lounge-course" },
+      { title: "Smoothie & Juice Bar Course", category: "Food & Hospitality", path: "Food & Hospitality", vibe: "For a wellness-friendly food concept with a clean product focus.", tags: ["smoothie", "juice", "wellness"], url: "http://learningwithjay.teachable.com/p/smoothie-bar-juice-bar-business" },
+
+      { title: "Nail Salon Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For a beauty service business with a clear client experience.", tags: ["nails", "salon"], url: "https://learningwithjay.teachable.com/p/how-to-start-a-nail-salon-business-for-beginners" },
+      { title: "Beauty Salon Business Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For a broader salon model with service-based income potential.", tags: ["salon", "beauty"], url: "https://learningwithjay.teachable.com/p/how-to-start-a-beauty-salon-business" },
+      { title: "Medical Spa Course", category: "Beauty & Lifestyle", path: "Care & Wellness", vibe: "For a premium beauty and wellness concept with higher structure needs.", tags: ["med spa", "wellness", "beauty"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-medical-spa-business" },
+      { title: "Fashion Boutique Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For a soft retail brand with taste, curation, and visual appeal.", tags: ["fashion", "boutique", "retail"], url: "http://learningwithjay.teachable.com/p/how-to-start-an-online-fashion-boutique-for-women" },
+      { title: "Beauty Cosmetics Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For a product-based beauty line with brand potential.", tags: ["cosmetics", "beauty", "product"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-beauty-cosmetics-line-business" },
+      { title: "Hair Business Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For selling weave, wigs, lace fronts, and extensions online.", tags: ["hair", "wigs", "ecommerce"], url: "http://learningwithjay.teachable.com/p/how-to-sell-hair-online-for-beginners-weave-bundles-lace-front-wigs-and-extensions" },
+      { title: "Beauty Supply Store Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For turning beauty product demand into a retail business.", tags: ["beauty supply", "retail"], url: "http://learningwithjay.teachable.com/p/beauty-supply-store" },
+      { title: "Mobile Barbershop Course", category: "Beauty & Lifestyle", path: "Beauty & Lifestyle", vibe: "For a mobile service model with convenience built into the offer.", tags: ["barber", "mobile", "service"], url: "http://learningwithjay.teachable.com/p/mobile-barbershop" },
+
+      { title: "Mobile Gas Station Course", category: "Local Service", path: "Local Service", vibe: "For a practical service model built around mobility and convenience.", tags: ["gas", "mobile", "local"], url: "https://learningwithjay.teachable.com/p/how-to-start-a-mobile-gas-station-business" },
+      { title: "Independent Trucking Course", category: "Local Service", path: "Local Service", vibe: "For a logistics business with operational structure and demand.", tags: ["trucking", "logistics"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-independent-trucking-company" },
+      { title: "Turo Luxury Car Rental Course", category: "Local Service", path: "Assets & Wealth", vibe: "For creating a vehicle-based rental income model.", tags: ["turo", "car rental", "assets"], url: "http://learningwithjay.teachable.com/p/how-to-start-your-own-luxury-car-rental-business-turo-included" },
+      { title: "Vending Machine Course", category: "Local Service", path: "Local Service", vibe: "For a simple local asset model with repeat location strategy.", tags: ["vending", "local", "machine"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-vending-machine-business-for-beginners" },
+      { title: "Laundromat Business Course", category: "Local Service", path: "Local Service", vibe: "For an essential service business with everyday demand.", tags: ["laundromat", "local", "service"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-laundromat-business" },
+      { title: "Commercial Cleaning Company Course", category: "Local Service", path: "Local Service", vibe: "For a practical B2B service with recurring client potential.", tags: ["cleaning", "commercial", "local"], url: "http://learningwithjay.teachable.com/p/commercial-cleaning-company" },
+      { title: "Senior Transportation Company Course", category: "Local Service", path: "Care & Wellness", vibe: "For a support-based transportation service serving older adults.", tags: ["senior", "transportation", "care"], url: "http://learningwithjay.teachable.com/p/senior-transportation-company" },
+      { title: "Event Planning & Party Rental Business", category: "Local Service", path: "Food & Hospitality", vibe: "For a celebration-focused business with rentals, events, and local relationships.", tags: ["events", "party rental", "local"], url: "http://learningwithjay.teachable.com/p/event-planning-party-rental-business" },
+
+      { title: "Virtual Call Center Course", category: "From Home", path: "From Home", vibe: "For a remote-friendly business model that can begin from home.", tags: ["remote", "call center", "from home"], url: "http://learningwithjay.teachable.com/p/start-your-own-virtual-call-center-business" },
+      { title: "Tech Sales Course", category: "From Home", path: "From Home", vibe: "For learning partner programs and tech sales pathways.", tags: ["SaaS", "tech sales", "remote"], url: "http://learningwithjay.teachable.com/p/mastering-saas-partner-programs-a-beginner-s-guide-to-building-lucrative-tech-sales-partnerships" },
+      { title: "HR Consulting Agency Course", category: "From Home", path: "From Home", vibe: "For turning professional knowledge into a service-based consulting offer.", tags: ["consulting", "HR", "remote"], url: "http://learningwithjay.teachable.com/p/hr-consulting-agency" },
+      { title: "Mobile Notary Public Course", category: "From Home", path: "From Home", vibe: "For a flexible service path with local appointments and low complexity.", tags: ["notary", "mobile", "service"], url: "http://learningwithjay.teachable.com/p/mobile-notary-service-business" },
+      { title: "Dropshipping Course", category: "From Home", path: "From Home", vibe: "For testing ecommerce without carrying traditional inventory first.", tags: ["dropshipping", "ecommerce", "from home"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-dropshipping-e-store-for-beginners" },
+
+      { title: "Assisted Living Facility Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a care-centered business with facility and compliance considerations.", tags: ["assisted living", "care", "facility"], url: "http://learningwithjay.teachable.com/p/how-to-open-and-start-an-assisted-living-facility" },
+      { title: "Home Healthcare Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For building a healthcare support agency with structured operations.", tags: ["home healthcare", "agency", "care"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-home-healthcare-agency-business" },
+      { title: "Non-Medical Home Healthcare Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For care support services that do not begin as medical care delivery.", tags: ["non-medical", "home care", "care"], url: "http://learningwithjay.teachable.com/p/non-medical-home-healthcare-course" },
+      { title: "Nurse Staffing Agency Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a staffing model serving healthcare organizations.", tags: ["nurse staffing", "agency", "care"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-nurse-staffing-agency" },
+      { title: "Telehealth Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a remote healthcare business model with digital delivery structure.", tags: ["telehealth", "remote", "healthcare"], url: "http://learningwithjay.teachable.com/p/telehealth-entrepreneur-a-beginner-s-guide-to-building-a-successful-remote-healthcare-business" },
+      { title: "Mobile DNA Testing Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a mobile testing service with local relationship potential.", tags: ["DNA", "testing", "mobile"], url: "http://learningwithjay.teachable.com/p/mobile-dna-testing-startup-course" },
+      { title: "Medical Scrub Business Course", category: "Care & Wellness", path: "Beauty & Lifestyle", vibe: "For a retail product business serving healthcare professionals.", tags: ["scrubs", "medical", "retail"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-medical-scrub-business" },
+      { title: "Medical Equipment Rental Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a rental model serving medical and home-care needs.", tags: ["equipment", "rental", "medical"], url: "http://learningwithjay.teachable.com/p/medical-equipment-rental-company" },
+      { title: "Child Daycare Course", category: "Care & Wellness", path: "Care & Wellness", vibe: "For a family support business with local trust and structure.", tags: ["daycare", "children", "care"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-child-daycare-center-for-beginners" },
+
+      { title: "Real Estate Wholesale Course", category: "Assets & Wealth", path: "Assets & Wealth", vibe: "For learning an entry path into real estate wholesaling.", tags: ["real estate", "wholesale", "assets"], url: "http://learningwithjay.teachable.com/p/real-estate-investing-wholesaling-for-beginners" },
+      { title: "Business Credit Course", category: "Assets & Wealth", path: "Assets & Wealth", vibe: "For building a stronger business foundation through credit education.", tags: ["business credit", "finance"], url: "http://learningwithjay.teachable.com/p/how-to-build-business-credit-for-beginners" },
+      { title: "Airbnb Course", category: "Assets & Wealth", path: "Assets & Wealth", vibe: "For exploring a short-term rental business model.", tags: ["airbnb", "rental", "property"], url: "http://learningwithjay.teachable.com/p/how-to-start-a-airbnb-business" },
+      { title: "Life Insurance Brokerage Course", category: "Assets & Wealth", path: "Assets & Wealth", vibe: "For a licensed financial service pathway with relationship-driven sales.", tags: ["insurance", "brokerage", "finance"], url: "http://learningwithjay.teachable.com/p/life-insurance-brokerage" },
+      { title: "Pallet Flipping Course", category: "Assets & Wealth", path: "Assets & Wealth", vibe: "For a resale model built around buying, sorting, and flipping inventory.", tags: ["pallet flipping", "resale"], url: "http://learningwithjay.teachable.com/p/pallet-flipping-business-course" }
+    ];
+
+    const categories = ["All", "From Home", "Beauty & Lifestyle", "Local Service", "Care & Wellness", "Food & Hospitality", "Assets & Wealth"];
+    let activeFilter = "All";
+
+    const filterRow = document.getElementById("filterRow");
+    const courseGrid = document.getElementById("courseGrid");
+    const searchInput = document.getElementById("searchInput");
+    const toast = document.getElementById("toast");
+    const academyBtn = document.getElementById("academyBtn");
+    const canvaBtn = document.getElementById("canvaBtn");
+    const landingPageBtn = document.getElementById("landingPageBtn");
+    const waitlistModal = document.getElementById("waitlistModal");
+    const modalClose = document.getElementById("modalClose");
+
+    if (canvaBtn) canvaBtn.href = CANVA_CUSTOMIZER_LINK;
+
+    function openWaitlistModal(event) {
+      if (event) event.preventDefault();
+      waitlistModal.classList.add("show");
+      waitlistModal.setAttribute("aria-hidden", "false");
+      modalClose.focus();
+    }
+
+    function closeWaitlistModal() {
+      waitlistModal.classList.remove("show");
+      waitlistModal.setAttribute("aria-hidden", "true");
+    }
+
+    document.querySelectorAll("[data-waitlist-trigger]").forEach(trigger => {
+      trigger.addEventListener("click", openWaitlistModal);
+    });
+
+    modalClose.addEventListener("click", closeWaitlistModal);
+    waitlistModal.addEventListener("click", event => {
+      if (event.target === waitlistModal) closeWaitlistModal();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && waitlistModal.classList.contains("show")) closeWaitlistModal();
+    });
+
+    function showToast(message = "Copied.") {
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    function normalize(text) {
+      return String(text).toLowerCase().trim();
+    }
+
+    function courseMatches(course, query) {
+      const haystack = [course.title, course.category, course.path, course.vibe, ...course.tags].join(" ").toLowerCase();
+      return haystack.includes(normalize(query));
+    }
+
+    function renderFilters() {
+      filterRow.innerHTML = categories.map(category => `
+        <button class="filter-btn ${category === activeFilter ? "active" : ""}" data-filter="${category}" type="button">${category}</button>
+      `).join("");
+
+      filterRow.querySelectorAll(".filter-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          renderFilters();
+          renderCourses();
+        });
+      });
+    }
+
+    function renderCourses() {
+      const query = searchInput.value;
+      const filtered = courses.filter(course => {
+        const filterMatch = activeFilter === "All" || course.path === activeFilter || course.category === activeFilter;
+        const searchMatch = !query || courseMatches(course, query);
+        return filterMatch && searchMatch;
+      });
+
+      if (!filtered.length) {
+        courseGrid.innerHTML = `<div class="course-card" style="grid-column: 1 / -1;"><h3>No courses found.</h3><p>Try a broader search, or switch the filter back to All.</p></div>`;
+        return;
+      }
+
+      courseGrid.innerHTML = filtered.map((course, index) => `
+        <article class="course-card">
+          <div>
+            <div class="course-topline">
+              <span class="category-pill">${course.path}</span>
+            </div>
+            <h3>${course.title}</h3>
+            <p>${course.vibe}</p>
+            <div class="course-meta">
+              ${course.tags.slice(0, 3).map(tag => `<span class="micro">${tag}</span>`).join("")}
+            </div>
+          </div>
+          <div class="course-actions">
+            <a class="btn btn-cherry open-course" href="${course.url}" target="_blank" rel="noopener noreferrer">Open Course</a>
+            <button class="copy-one" type="button" aria-label="Copy ${course.title} link" data-copy-index="${courses.indexOf(course)}">↗</button>
+          </div>
+        </article>
+      `).join("");
+
+      courseGrid.querySelectorAll("[data-copy-index]").forEach(button => {
+        button.addEventListener("click", async () => {
+          const course = courses[Number(button.dataset.copyIndex)];
+          await navigator.clipboard.writeText(`${course.title}: ${course.url}`);
+          showToast("Course link copied.");
+        });
+      });
+    }
+
+    searchInput.addEventListener("input", renderCourses);
+
+    document.getElementById("copyAllBtn").addEventListener("click", async () => {
+      const text = courses.map(course => `${course.title}: ${course.url}`).join("\n");
+      await navigator.clipboard.writeText(text);
+      showToast("All course links copied.");
+    });
+
+    document.querySelectorAll(".path-card").forEach(card => {
+      card.addEventListener("click", () => {
+        activeFilter = card.dataset.filter;
+        searchInput.value = "";
+        renderFilters();
+        renderCourses();
+        document.getElementById("library").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    const recommendation = document.getElementById("recommendation");
+    const recoCopy = {
+      "From Home": "Start with Virtual Call Center, Tech Sales, HR Consulting, Mobile Notary, or Dropshipping. These are best when you need a quieter entry point with flexible setup.",
+      "Beauty & Lifestyle": "Start with Nail Salon, Beauty Salon, Fashion Boutique, Hair Business, or Beauty Cosmetics. These work well when identity, taste, and client experience matter to you.",
+      "Local Service": "Start with Vending Machines, Commercial Cleaning, Laundromat, Trucking, or Mobile Gas Station. These are practical paths with clear local demand.",
+      "Care & Wellness": "Start with Non-Medical Home Healthcare, Assisted Living, Senior Transportation, Telehealth, or Child Daycare. These fit care-centered builders who want meaningful service demand."
+    };
+
+    document.querySelectorAll(".quiz-card").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".quiz-card").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        const lane = button.dataset.reco;
+        recommendation.innerHTML = `<strong>Your cleanest starting lane: ${lane}</strong><span>${recoCopy[lane]}</span><br><br><a href="#library" data-quick-filter="${lane}">Show these courses</a>`;
+        recommendation.classList.add("show");
+        recommendation.querySelector("a").addEventListener("click", () => {
+          activeFilter = lane;
+          searchInput.value = "";
+          renderFilters();
+          renderCourses();
+        });
+      });
+    });
+
+    renderFilters();
+    renderCourses();
+  </script>
+</body>
+</html>
